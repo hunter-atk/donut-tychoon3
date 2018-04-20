@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>Donut Shop Empire</h3>
+    <a href="/employees/add">Add a new employee</a>
+    <br>
+
+    <ul>
+    <% for(employee of employees){ %>
+      <a href="/employees/<%=employee.id%>/info"><h4><%=employee.first_name%> <%=employee.last_name%></h4></a>
+      <form action="/employees/<%=employee.id%>/edit">
+           <input type="submit" value="Edit employee info" />
+      </form>
+      <form method="POST" action="/employees/<%=employee.id%>?_method=DELETE">
+           <button type="submit">Remove employee</button>
+      </form>
+    <% } %>
+
+
+  </ul>
+  </body>
+</html>

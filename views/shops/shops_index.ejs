@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>Donut Shop Empire</h3>
+    <a href="/shops/add">Create a new shop</a>
+    <br>
+
+    <ul>
+    <% for(shop of shops){ %>
+      <a href="/shops/<%=shop.id%>/info"><h4><%=shop.name%></h4></a>
+      <p><%=shop.city%></p>
+      <form action="/shops/<%=shop.id%>/edit">
+           <input type="submit" value="Edit shop" />
+      </form>
+      <form method="POST" action="/shops/<%=shop.id%>?_method=DELETE">
+           <button type="submit">Delete shop</button>
+      </form>
+    <% } %>
+
+
+  </ul>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>This is the info page for a donut</h1>
+    <h3><%=donut.name%></h3>
+    <h3><%=donut.topping%></h3>
+    <h3><%=donut.price%></h3>
+
+    <ul>
+      <% for(shop of shops){ %>
+        <a href="/shops/<%=shop.id%>/info"><h4><%=shop.name%></h4></a>
+      <% } %>
+    </ul>
+  </body>
+</html>
